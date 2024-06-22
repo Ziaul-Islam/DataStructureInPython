@@ -45,6 +45,25 @@ class LinkList:
             self.tail.next = None
         self.length -= 1
         return temp.value
+    
+    def set_value(self, index, value):
+        if index < 0 or self.length == -1:
+            return False
+        else:
+            temp = self.head
+            i = 0
+            while temp != None and i < index:
+                temp = temp.next
+                i += 1
+            if temp is None: 
+                return False
+            else:
+                temp.value = value
+                return True
+            
+
+
+
 
 
 
@@ -54,8 +73,16 @@ myLinkList.append(23)
 myLinkList.append(11)
 myLinkList.printList()
 print("Pop : ", myLinkList.pop())
+"""
 print("Pop : ", myLinkList.pop())
 print("Pop : ", myLinkList.pop())
 print("Pop : ", myLinkList.pop())
 print("Pop : ", myLinkList.pop())
+"""
+myLinkList.printList()
+print(myLinkList.set_value(0, 1))
+print(myLinkList.set_value(1, 2))
+print(myLinkList.set_value(2, 3))
+print(myLinkList.set_value(3, 4))
+print(myLinkList.set_value(-1, 404))
 myLinkList.printList()
