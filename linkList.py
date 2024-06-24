@@ -60,8 +60,20 @@ class LinkList:
             else:
                 temp.value = value
                 return True
-            
-
+    
+    def reverse_linklist(self):
+        pre = self.head
+        self.head = self.tail
+        self.tail = pre
+        cur = None
+        if pre != None:
+            cur = pre.next
+            pre.next = None
+        while cur is not None:
+            temp = cur.next 
+            cur.next = pre 
+            pre = cur 
+            cur = temp
 
 
 
@@ -72,17 +84,21 @@ myLinkList.append(7)
 myLinkList.append(23)
 myLinkList.append(11)
 myLinkList.printList()
-print("Pop : ", myLinkList.pop())
+#print("Pop : ", myLinkList.pop())
 """
 print("Pop : ", myLinkList.pop())
 print("Pop : ", myLinkList.pop())
 print("Pop : ", myLinkList.pop())
 print("Pop : ", myLinkList.pop())
 """
-myLinkList.printList()
+#myLinkList.printList()
+"""
 print(myLinkList.set_value(0, 1))
 print(myLinkList.set_value(1, 2))
 print(myLinkList.set_value(2, 3))
 print(myLinkList.set_value(3, 4))
 print(myLinkList.set_value(-1, 404))
+myLinkList.printList()
+"""
+myLinkList.reverse_linklist();
 myLinkList.printList()
