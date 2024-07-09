@@ -11,10 +11,11 @@ class Stack:
     
     def printStack(self):
         temp = self.top
+        print("My Stack : ")
         while temp != None:
-            print(temp.value," ,", end='')
+            print(temp.value,", ",end='')
             temp = temp.next
-        print()
+        print("\n")
     
     def push(self, value):
         new_Node = Node(value)
