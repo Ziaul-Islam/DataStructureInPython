@@ -2,7 +2,8 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-
+        
+#In stact we add and delete from top
 class Stack:
     def __init__(self, value):
         new_Node = Node(value)
