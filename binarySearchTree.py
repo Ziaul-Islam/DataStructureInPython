@@ -28,6 +28,20 @@ class BinarySearchTree:
                         temp.right = new_Node
                         return True
                     temp = temp.right
+        
+    def __r_contains(self, current, srch):
+        if current == None:
+            return False
+        if current.value == srch:
+            return True 
+        if current.value > srch: #search item is smaller then go left
+            return self.__r_contains(current.left, srch)
+        elif current.value < srch: #search item is greater then go right 
+            return self.__r_contains(current.right, srch)
+    
+    def r_contains(self, srch):
+        return self.__r_contains(self.root, srch)
+
     
     def contains(self, srch):
         if self.root is None:
@@ -54,9 +68,15 @@ print(myTree.insert(23))
 print(myTree.root.left.value)
 print(myTree.root.right.value)
 print(myTree.root.right.right.value)"""
-print("76 : ",myTree.contains(76))
+"""print("76 : ",myTree.contains(76))
 print("23 : ",myTree.contains(23))
 print("48 : ",myTree.contains(48))
 print("45 : ",myTree.contains(45))
 print("97 : ",myTree.contains(97))
-print("18 : ",myTree.contains(18))
+print("18 : ",myTree.contains(18))"""
+print("76 : ",myTree.r_contains(76))
+print("23 : ",myTree.r_contains(23))
+print("48 : ",myTree.r_contains(48))
+print("45 : ",myTree.r_contains(65))
+print("97 : ",myTree.r_contains(97))
+print("18 : ",myTree.r_contains(65))
