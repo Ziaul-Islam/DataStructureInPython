@@ -102,23 +102,49 @@ class BinarySearchTree:
             return current
 
     def delete_node(self, value):
-        self.__delete_node(self.root, value)   
-    
+        self.__delete_node(self.root, value) 
+
+    def inorderTraversal(self, cur):
+        if cur:
+            self.inorderTraversal(cur.left)
+            print(cur.value,", ", end='')
+            self.inorderTraversal(cur.right)
+
+    def preorderTraversal(self, cur):
+        if cur:
+            print(cur.value,", ", end='')
+            self.preorderTraversal(cur.left)
+            self.preorderTraversal(cur.right)
+
+    def postorderTraversal(self, cur):
+        if cur:
+            self.postorderTraversal(cur.left)
+            self.postorderTraversal(cur.right)
+            print(cur.value,", ", end='')   
 
 myTree = BinarySearchTree()
-"""print(myTree.insert(47))
+print(myTree.insert(47))
 print(myTree.insert(65))
 print(myTree.insert(23))
 print(myTree.insert(76))
-print(myTree.insert(23))"""
+print(myTree.insert(23))
 
-myTree.r_insert(2)
+"""myTree.r_insert(2)
 myTree.r_insert(3)
-myTree.r_insert(1)
+myTree.r_insert(1)"""
 
-print(myTree.root.value)
+print("In-order Traversal: ", end='')
+myTree.inorderTraversal(myTree.root)
+
+print("Pre-order Traversal: ", end='')
+myTree.preorderTraversal(myTree.root)
+
+print("post-order Traversal: ", end='')
+myTree.postorderTraversal(myTree.root)
+
+"""print(myTree.root.value)
 print(myTree.root.left.value)
-print(myTree.root.right.value)
+print(myTree.root.right.value)"""
 
 """print(myTree.root.value)
 print(myTree.root.left.value)
