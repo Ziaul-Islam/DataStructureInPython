@@ -122,17 +122,70 @@ class BinarySearchTree:
             self.postorderTraversal(cur.right)
             print(cur.value,", ", end='')   
 
+    def BFS(self):
+        cur = self.root
+        queue = []
+        if cur:
+            queue.append(cur)
+            print("BFS : ", end='')
+        while len(queue) > 0:
+            res  = queue.pop(0)
+            if res.left: 
+                queue.append(res.left)
+            if res.right:
+                queue.append(res.right)
+            print(res.value,", ", end='')
+        print()
+
+    def __sum(self, cur):
+        if cur is None:
+            return 0
+        return cur.value + self.__sum(cur.left) + self.__sum(cur.right)
+
+    def sum(self):
+        return self.__sum(self.root)
+    
+    def __reverse(self, cur):
+        if cur is None: 
+            return 
+        else:
+            cur.left, cur.right = cur.right, cur.left
+            self.__reverse(cur.left)
+            self.__reverse(cur.right)
+        return
+
+    def reverse(self):
+        self.__reverse(self.root)
+
 myTree = BinarySearchTree()
+"""
 print(myTree.insert(47))
 print(myTree.insert(65))
 print(myTree.insert(23))
 print(myTree.insert(76))
 print(myTree.insert(23))
+"""
 
-"""myTree.r_insert(2)
-myTree.r_insert(3)
-myTree.r_insert(1)"""
+myTree.r_insert(47)
+myTree.r_insert(21)
+myTree.r_insert(76)
+myTree.r_insert(18)
+myTree.r_insert(27)
+myTree.r_insert(52)
+myTree.r_insert(82)
 
+print("Sum of BST : ", myTree.sum())
+
+"""
+myTree.insert(47)
+myTree.insert(21)
+myTree.insert(76)
+myTree.insert(18)
+myTree.insert(27)
+myTree.insert(52)
+myTree.insert(82)
+"""
+"""
 print("In-order Traversal: ", end='')
 myTree.inorderTraversal(myTree.root)
 
@@ -141,7 +194,12 @@ myTree.preorderTraversal(myTree.root)
 
 print("post-order Traversal: ", end='')
 myTree.postorderTraversal(myTree.root)
+"""
+myTree.BFS()
 
+myTree.reverse()
+
+myTree.BFS()
 """print(myTree.root.value)
 print(myTree.root.left.value)
 print(myTree.root.right.value)"""
