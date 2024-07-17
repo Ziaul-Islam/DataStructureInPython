@@ -24,6 +24,10 @@ This project aims to provide a clear and concise implementation of common data s
 - Linked List
 - Hash Table
 - Graph (with BFS and DFS traversals)
+- Sorting
+- Dynamic Programming
+- Call Stack
+- Complexity
 
 ## Installation
 

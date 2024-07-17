@@ -122,6 +122,42 @@ class BinarySearchTree:
             self.postorderTraversal(cur.right)
             print(cur.value,", ", end='')   
 
+    def dfs_pre_order(self):
+        result = []
+        def traverse(cur):
+            if cur:
+                result.append(cur.value)
+                traverse(cur.left)
+                traverse(cur.right)
+            return
+        
+        traverse(self.root)
+        return result
+    
+    def dfs_in_order(self):
+        result = []
+        def traverse(cur):
+            if cur:
+                traverse(cur.left)
+                result.append(cur.value)
+                traverse(cur.right)
+            return
+        
+        traverse(self.root)
+        return result
+    
+    def dfs_post_order(self):
+        result = []
+        def traverse(cur):
+            if cur:
+                traverse(cur.left)
+                traverse(cur.right)
+                result.append(cur.value)
+            return
+        
+        traverse(self.root)
+        return result
+
     def BFS(self):
         cur = self.root
         queue = []
@@ -174,7 +210,7 @@ myTree.r_insert(27)
 myTree.r_insert(52)
 myTree.r_insert(82)
 
-print("Sum of BST : ", myTree.sum())
+#print("Sum of BST : ", myTree.sum())
 
 """
 myTree.insert(47)
@@ -197,9 +233,14 @@ myTree.postorderTraversal(myTree.root)
 """
 myTree.BFS()
 
-myTree.reverse()
+#myTree.reverse()
 
-myTree.BFS()
+#myTree.BFS()
+
+print("Pre-order Traversal: ",myTree.dfs_pre_order())
+print("In-order Traversal: ",myTree.dfs_in_order())
+print("Post-order Traversal: ",myTree.dfs_post_order())
+
 """print(myTree.root.value)
 print(myTree.root.left.value)
 print(myTree.root.right.value)"""
