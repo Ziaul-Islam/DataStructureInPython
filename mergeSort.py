@@ -20,7 +20,7 @@ def merge(list1, list2):
 
 def mergeSort(list):
     if len(list) == 1:
-        return
+        return list
     midsize = int(len(list) / 2)
     leftlist = mergeSort(list[:midsize])
     rightlist = mergeSort(list[midsize:])
