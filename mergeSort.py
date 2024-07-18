@@ -28,3 +28,6 @@ def mergeSort(list):
     return merge(leftlist, rightlist)
 
 print(mergeSort([3,2,1,5,4,6,7,9,8]))
+
+
+#Complexity O(n log n)

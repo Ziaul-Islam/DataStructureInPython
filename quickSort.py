@@ -23,3 +23,5 @@ list = [4,6,1,7,3,2,5]
 print(list)
 print("Quick Sorted list : ")
 print(quickSort(list))
+
+#Complexity O(n log n)

@@ -11,3 +11,5 @@ def insertion(mylist):
 mylist = [9, 6, 1, 5, 2, 3]
 print(insertion(mylist.copy()))
 print(mylist)
+
+#Complexity O(n^2)

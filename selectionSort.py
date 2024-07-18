@@ -11,3 +11,5 @@ def selection(mylist):
 mylist = [9, 6, 1, 5, 2, 3]
 print(selection(mylist.copy()))
 print(mylist)
+
+#Complexity O(n^2)
