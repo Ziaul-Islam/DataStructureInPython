@@ -24,4 +24,4 @@ print(list)
 print("Quick Sorted list : ")
 print(quickSort(list))
 
-#Complexity O(n log n)
+#Complexity O(n log n), worst case sorted data then O(n^2)
