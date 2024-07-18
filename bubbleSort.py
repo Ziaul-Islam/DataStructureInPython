@@ -6,6 +6,8 @@ def bubble(mylist):
                 mylist[j] = mylist[j+1]
                 mylist[j+1] = temp
     return mylist
+
+
 mylist = [9, 6, 1, 5, 2, 3]
 print(bubble(mylist.copy()))
 print(mylist)
